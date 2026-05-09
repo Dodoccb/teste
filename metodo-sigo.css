@@ -83,6 +83,13 @@ a {
   font-size: 1.1rem;
 }
 
+.brand img{
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display:block;
+}
+
 .brand-mark {
   width: 44px;
   height: 36px;
@@ -173,7 +180,7 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 118px 0 88px;
+  padding: 70px 0 45px;
   background: radial-gradient(circle at 75% 18%, rgba(0, 131, 62, .16), transparent 28%),
               radial-gradient(circle at 10% 0%, rgba(0, 26, 141, .14), transparent 30%),
               linear-gradient(180deg, #f5f8ff 0%, #fff 55%, #f7fbf8 100%);
@@ -193,7 +200,7 @@ a {
   display: grid;
   grid-template-columns: 1.08fr .92fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
 
 .eyebrow,
@@ -259,29 +266,50 @@ a {
 
 .hero-proof {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 34px;
-  max-width: 680px;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 42px;
+  width: 100%;
+  max-width: 1280px;
+  align-items: stretch;
+}
+
+.hero-proof{
+  width:100%;
+  margin-top:42px;
+  padding-left:200px;
+
+  display:grid;
+  grid-template-columns:repeat(4,minmax(220px,1fr));
+  gap:22px;
 }
 
 .hero-proof div {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 18px;
+  border-radius: 22px;
+  padding: 24px 22px;
   box-shadow: var(--shadow);
-}
+  min-height: 175px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  transition: .25s ease;
+}
 .hero-proof strong {
   display: block;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
+  line-height: 1.2;
   color: var(--blue);
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
 .hero-proof span {
-  font-size: .86rem;
+  font-size: .92rem;
+  line-height: 1.55;
   color: var(--muted);
 }
 
@@ -289,9 +317,11 @@ a {
    6. VISUAL DO MÉTODO / ÓRBITA DO HERO
    ========================================================= */
 .hero-visual {
-  min-height: 520px;
-  display: grid;
-  place-items: center;
+  min-height: 470px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 .method-orbit {
@@ -303,6 +333,7 @@ a {
               conic-gradient(from 0deg, rgba(0, 26, 141, .12), rgba(0, 131, 62, .16), rgba(0, 26, 141, .12));
   border: 1px solid #dce8f3;
   box-shadow: var(--shadow-2);
+  margin-top: 0;
 }
 
 .method-orbit::before {
@@ -315,53 +346,55 @@ a {
 
 .orbit-center {
   position: absolute;
-  inset: 38%;
+  inset: 36%;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--blue), var(--green));
   color: #fff;
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   font-weight: 900;
   box-shadow: 0 16px 36px rgba(0, 26, 141, .25);
 }
 
 .orbit-item {
   position: absolute;
-  background: #fff;
+  background: rgba(255,255,255,.96);
   border: 1px solid #d7e2ee;
   border-radius: 16px;
-  padding: 12px 14px;
+  padding: 12px 18px;
   font-weight: 800;
   color: #14213d;
   box-shadow: var(--shadow);
   font-size: .9rem;
+  white-space: nowrap;
+  text-align: center;
 }
 
+/* 4 caixas equilibradas na órbita*/
+
 .item-1 {
-  top: 18px;
+  top: 42px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .item-2 {
-  right: -10px;
-  top: 42%;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .item-3 {
-  bottom: 40px;
-  right: 56px;
+  bottom: 58px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .item-4 {
-  bottom: 40px;
-  left: 56px;
-}
-
-.item-5 {
-  left: -10px;
-  top: 42%;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
 }
 
 /* =========================================================
@@ -384,6 +417,21 @@ a {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.section-subtitle {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 860px;
+  margin-top: 18px;
 }
 
 h2 {
@@ -454,6 +502,35 @@ p {
   font-weight: 900;
   text-align: center;
   box-shadow: var(--shadow-2);
+}
+
+.price-card h4 {
+  margin: 18px 0 8px;
+  color: var(--blue);
+  font-size: .95rem;
+  font-weight: 900;
+}
+
+.dark-plan h4 {
+  color: #fff;
+}
+
+.plan-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 14px;
+  margin: 8px 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.dark-plan .plan-pill {
+  color: #fff;
 }
 
 /* =========================================================
@@ -894,6 +971,74 @@ p {
 }
 
 /* =========================================================
+   CTA FIXO WHATSAPP
+========================================================= */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    var(--green)
+  );
+
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: .95rem;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.18);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.22);
+}
+
+.whatsapp-label {
+  white-space: nowrap;
+}
+
+.floating-whatsapp svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+
+    padding: 12px 14px;
+
+    font-size: .88rem;
+  }
+
+  .whatsapp-label {
+    display: none;
+  }
+}
+
+/* =========================================================
    18. AJUSTE DOS CARDS DO BLOCO MODELOS DE ENTREGA
    ========================================================= */
 .cards-grid.four .card {
@@ -966,8 +1111,12 @@ p {
     padding: 72px 0;
   }
 
-  .hero {
-    padding: 88px 0 70px;
+   .hero {
+    padding: 56px 0 48px;
+  }
+
+  .hero-grid {
+    gap: 34px;
   }
 
   .hero h1 {
@@ -978,7 +1127,7 @@ p {
     font-size: .62em;
   }
 
-  .hero-proof,
+   .hero-proof,
   .cards-grid.five,
   .timeline,
   .maturity-grid,
@@ -987,6 +1136,20 @@ p {
   .two-columns {
     grid-template-columns: 1fr;
   }
+
+  .hero-proof {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  justify-items: center;
+}
+
+.hero-proof div {
+  width: min(100%, 420px);
+}
 
   .topbar-inner {
     height: 68px;
@@ -1005,15 +1168,59 @@ p {
     flex-direction: column;
   }
 
+   .hero-visual {
+    min-height: 300px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    overflow: visible;
+  }
+
   .method-orbit {
-    width: 320px;
+    width: min(270px, 82vw);
+    margin-top: 0;
+  }
+
+  .method-orbit::before {
+    inset: 44px;
+  }
+
+  .orbit-center {
+    inset: 35%;
+    font-size: 1.15rem;
   }
 
   .orbit-item {
-    font-size: .76rem;
-    padding: 9px 10px;
+    font-size: .66rem;
+    padding: 7px 9px;
+    border-radius: 11px;
+    white-space: nowrap;
   }
 
+  .item-1 {
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .item-2 {
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .item-3 {
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .item-4 {
+    top: 50%;
+    left: -6px;
+    transform: translateY(-50%);
+  }
   .belief-box {
     padding: 28px 20px;
   }

@@ -1,7 +1,6 @@
 /* =========================================================
    LS Gestão | Método LS - SIGO
-   Arquivo CSS organizado e comentado
-   Observação: estrutura, classes e propriedades preservadas.
+   CSS principal revisado, organizado e responsivo
    ========================================================= */
 
 /* =========================================================
@@ -26,7 +25,7 @@
 }
 
 /* =========================================================
-   2. RESET E CONFIGURAÇÕES BASE
+   2. RESET E BASE
    ========================================================= */
 * {
   box-sizing: border-box;
@@ -36,12 +35,19 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: var(--text);
   background: #fff;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 a {
@@ -49,13 +55,20 @@ a {
   color: inherit;
 }
 
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
 .container {
   width: min(var(--container), calc(100% - 32px));
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* =========================================================
-   3. HEADER / TOPO FIXO
+   3. HEADER / TOPO
    ========================================================= */
 .topbar {
   position: sticky;
@@ -78,16 +91,17 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 1.1rem;
   font-weight: 900;
   color: var(--blue);
-  font-size: 1.1rem;
+  min-width: 0;
 }
 
-.brand img{
+.brand img {
   height: 44px;
   width: auto;
   object-fit: contain;
-  display:block;
+  display: block;
 }
 
 .brand-mark {
@@ -181,9 +195,10 @@ a {
   position: relative;
   overflow: hidden;
   padding: 70px 0 45px;
-  background: radial-gradient(circle at 75% 18%, rgba(0, 131, 62, .16), transparent 28%),
-              radial-gradient(circle at 10% 0%, rgba(0, 26, 141, .14), transparent 30%),
-              linear-gradient(180deg, #f5f8ff 0%, #fff 55%, #f7fbf8 100%);
+  background:
+    radial-gradient(circle at 75% 18%, rgba(0, 131, 62, .16), transparent 28%),
+    radial-gradient(circle at 10% 0%, rgba(0, 26, 141, .14), transparent 30%),
+    linear-gradient(180deg, #f5f8ff 0%, #fff 55%, #f7fbf8 100%);
 }
 
 .hero::before {
@@ -258,7 +273,8 @@ a {
 }
 
 .hero-actions,
-.final-actions {
+.final-actions,
+.metodo-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -268,7 +284,6 @@ a {
   width: min(var(--container), calc(100% - 32px));
   margin: 42px auto 0;
   padding-left: 0;
-
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
@@ -282,11 +297,9 @@ a {
   padding: 24px 22px;
   box-shadow: var(--shadow);
   min-height: 50px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   transition: .25s ease;
 }
 
@@ -306,7 +319,7 @@ a {
 }
 
 /* =========================================================
-   6. VISUAL DO MÉTODO / ÓRBITA DO HERO
+   6. HERO | VISUAL DO MÉTODO / ÓRBITA
    ========================================================= */
 .hero-visual {
   min-height: 470px;
@@ -321,8 +334,9 @@ a {
   width: min(470px, 90vw);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, #fff 0 25%, transparent 26%),
-              conic-gradient(from 0deg, rgba(0, 26, 141, .12), rgba(0, 131, 62, .16), rgba(0, 26, 141, .12));
+  background:
+    radial-gradient(circle, #fff 0 25%, transparent 26%),
+    conic-gradient(from 0deg, rgba(0, 26, 141, .12), rgba(0, 131, 62, .16), rgba(0, 26, 141, .12));
   border: 1px solid #dce8f3;
   box-shadow: var(--shadow-2);
   margin-top: 0;
@@ -351,7 +365,7 @@ a {
 
 .orbit-item {
   position: absolute;
-  background: rgba(255,255,255,.96);
+  background: rgba(255, 255, 255, .96);
   border: 1px solid #d7e2ee;
   border-radius: 16px;
   padding: 12px 18px;
@@ -362,8 +376,6 @@ a {
   white-space: nowrap;
   text-align: center;
 }
-
-/* 4 caixas equilibradas na órbita*/
 
 .item-1 {
   top: 42px;
@@ -445,7 +457,7 @@ p {
 }
 
 /* =========================================================
-   8. CARDS GERAIS E BLOCO DE PROBLEMAS
+   8. CARDS GERAIS
    ========================================================= */
 .cards-grid {
   display: grid;
@@ -454,6 +466,10 @@ p {
 
 .cards-grid.five {
   grid-template-columns: repeat(5, 1fr);
+}
+
+.cards-grid.four {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card,
@@ -469,6 +485,9 @@ p {
   box-shadow: var(--shadow);
 }
 
+/* =========================================================
+   9. PROBLEMAS
+   ========================================================= */
 .problem-card {
   padding: 24px 20px;
 }
@@ -496,37 +515,8 @@ p {
   box-shadow: var(--shadow-2);
 }
 
-.price-card h4 {
-  margin: 18px 0 8px;
-  color: var(--blue);
-  font-size: .95rem;
-  font-weight: 900;
-}
-
-.dark-plan h4 {
-  color: #fff;
-}
-
-.plan-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 6px 14px;
-  margin: 8px 0 10px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  color: var(--blue);
-  font-size: .85rem;
-  font-weight: 900;
-}
-
-.dark-plan .plan-pill {
-  color: #fff;
-}
-
 /* =========================================================
-   9. BLOCO DE REPOSICIONAMENTO / CRENÇA
+   10. REPOSICIONAMENTO / CRENÇA
    ========================================================= */
 .belief {
   background: #fff;
@@ -589,7 +579,7 @@ p {
 }
 
 /* =========================================================
-   10. SOLUÇÃO / CARDS DO MÉTODO
+   11. SOLUÇÃO
    ========================================================= */
 .solution-grid {
   grid-template-columns: repeat(3, 1fr);
@@ -640,7 +630,7 @@ p {
 }
 
 /* =========================================================
-   11. TIMELINE / COMO FUNCIONA
+   12. TIMELINE / COMO FUNCIONA
    ========================================================= */
 .timeline {
   display: grid;
@@ -677,7 +667,7 @@ p {
 }
 
 /* =========================================================
-   12. ARQUITETURA DO MÉTODO
+   13. ARQUITETURA / MÉTODO ANTIGO
    ========================================================= */
 .architecture {
   background: #fff;
@@ -699,7 +689,7 @@ p {
 }
 
 /* =========================================================
-   13. MATURIDADE / CARDS EM ESCADA
+   14. MATURIDADE / MODELOS
    ========================================================= */
 .maturity-grid {
   display: grid;
@@ -739,19 +729,163 @@ p {
   color: #fff;
 }
 
+.cards-grid.four .card {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
+}
+
 /* =========================================================
-   14. PLANOS / PRICING
+   15. MÉTODO LS - SIGO COM PLATAFORMA
    ========================================================= */
+.metodo-platform {
+  padding: 90px 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0, 131, 62, .10), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+}
+
+.metodo-platform-grid {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.metodo-copy h2 {
+  font-size: clamp(2.4rem, 3.6vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  margin-bottom: 22px;
+  max-width: 700px;
+}
+
+.metodo-copy p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.metodo-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.metodo-list div {
+  position: relative;
+  padding-left: 42px;
+}
+
+.metodo-list div::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #edf8f0;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.metodo-list strong {
+  display: block;
+  color: var(--blue);
+  font-weight: 900;
+  font-size: .98rem;
+  margin-bottom: 2px;
+}
+
+.metodo-list span {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.metodo-actions {
+  margin-top: 30px;
+}
+
+.metodo-video {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 35px 80px rgba(7, 31, 87, .18);
+}
+
+.metodo-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 70%, rgba(7,31,87,.06) 100%);
+  pointer-events: none;
+}
+
+.metodo-video img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.play-button {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  border: 2px solid rgba(38, 180, 87, .47);
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.82);
+  color: var(--blue);
+  font-size: 2rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
+}
+
+.platform-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(7, 31, 87, .88);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+/* =========================================================
+   16. PLANOS / PRICING
+   ========================================================= */
+#planos .container {
+  width: min(98%, 1720px);
+}
+
 .pricing-grid.four {
   display: grid;
   grid-template-columns: repeat(4, minmax(300px, 1fr));
   gap: 24px;
   align-items: stretch;
   width: 100%;
-} 
-
-#planos .container {
-  width: min(98%, 1720px);
 }
 
 .price-card {
@@ -759,6 +893,13 @@ p {
   padding: 28px 22px;
   display: flex;
   flex-direction: column;
+}
+
+.price-card h4 {
+  margin: 18px 0 8px;
+  color: var(--blue);
+  font-size: .95rem;
+  font-weight: 900;
 }
 
 .plan-head span {
@@ -834,25 +975,20 @@ p {
   overflow: visible;
 }
 
-.best-tag{
-  position:absolute;
-  top:-16px;
-  left:50%;
-  transform:translateX(-50%);
-
-  background:var(--blue);
-  color:#fff;
-
-  padding:8px 22px;
-  border-radius:999px;
-
-  font-size:.78rem;
-  font-weight:800;
-  letter-spacing:.02em;
-
-  box-shadow:0 10px 25px rgba(13,38,165,.18);
-
-  z-index:5;
+.best-tag {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  box-shadow: 0 10px 25px rgba(13, 38, 165, .18);
 }
 
 .ribbon {
@@ -874,6 +1010,7 @@ p {
 }
 
 .dark-plan h3,
+.dark-plan h4,
 .dark-plan p,
 .dark-plan li,
 .dark-plan .plan-head span,
@@ -885,6 +1022,24 @@ p {
 
 .dark-plan .check-list li::before {
   color: #fff;
+}
+
+.dark-plan .plan-pill {
+  color: #fff;
+}
+
+.plan-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 14px;
+  margin: 8px 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: .85rem;
+  font-weight: 900;
 }
 
 .contract-box {
@@ -901,183 +1056,10 @@ p {
 }
 
 /* =========================================================
-   15. BLOCO ESTRATÉGICO / NORMAS E SISTEMAS
+   17. CASES
    ========================================================= */
-.strategic {
-  background: linear-gradient(135deg, var(--blue), var(--green));
-  color: #fff;
-}
-
-.strategic h2,
-.strategic p,
-.strategic li {
-  color: #fff;
-}
-
-.strategic .tag {
-  background: rgba(255, 255, 255, .14);
-  color: #fff;
-}
-
-.strategic-box {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 28px;
-  align-items: center;
-}
-
-.strategic-end {
-  grid-column: 1/-1;
-  padding: 20px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, .12);
-  font-weight: 900;
-}
-
-.strategic .check-list li::before {
-  color: #fff;
-}
-
-/* =========================================================
-   16. ANTES E DEPOIS
-   ========================================================= */
-.compare-card {
-  padding: 30px;
-}
-
-.compare-card h3 {
-  font-size: 1.5rem;
-}
-
-.compare-card ul {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-}
-
-.before {
-  border-top: 6px solid #aab5c2;
-}
-
-.after {
-  border-top: 6px solid var(--green);
-  background: #f8fff9;
-}
-
-/* =========================================================
-   17. CTA FINAL
-   ========================================================= */
-.final-cta {
-  padding: 82px 0;
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue) 55%, var(--green));
-  color: #fff;
-}
-
-.final-grid {
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.final-cta h2 {
-  color: #fff;
-}
-
-.final-cta p {
-  color: rgba(255, 255, 255, .82);
-  font-size: 1.05rem;
-}
-
-.final-actions {
-  justify-content: flex-end;
-}
-
-/* =========================================================
-   CTA FIXO WHATSAPP
-========================================================= */
-
-.floating-whatsapp {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 999;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 14px 18px;
-
-  border-radius: 999px;
-
-  background: linear-gradient(
-    135deg,
-    var(--blue),
-    var(--green)
-  );
-
-  color: #fff;
-  text-decoration: none;
-
-  font-weight: 700;
-  font-size: .95rem;
-
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.18);
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease;
-}
-
-.floating-whatsapp:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.22);
-}
-
-.whatsapp-label {
-  white-space: nowrap;
-}
-
-.floating-whatsapp svg {
-  flex-shrink: 0;
-}
-
-@media (max-width: 640px) {
-
-  .floating-whatsapp {
-    right: 16px;
-    bottom: 16px;
-
-    padding: 12px 14px;
-
-    font-size: .88rem;
-  }
-
-  .whatsapp-label {
-    display: none;
-  }
-}
-
-/* =========================================================
-   18. AJUSTE DOS CARDS DO BLOCO MODELOS DE ENTREGA
-   ========================================================= */
-.cards-grid.four .card {
-  padding: 28px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 180px;
-}
-
-/* =========================================================
-  Adicionado dia 13.05 após followup com cliente o bloco CASES
-========================================================= */
-
 .cases-section {
-  background: #ffffff;
+  background: #fff;
 }
 
 .cases-grid {
@@ -1092,7 +1074,7 @@ p {
   border: 1px solid #e5e9f2;
   border-radius: 24px;
   padding: 28px 24px;
-  box-shadow: 0 10px 28px rgba(20, 30, 60, 0.04);
+  box-shadow: 0 10px 28px rgba(20, 30, 60, .04);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1146,14 +1128,11 @@ p {
   width: 42px;
   height: 42px;
   min-width: 42px;
-
   border-radius: 50%;
   background: #edf8f0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 1rem;
 }
 
@@ -1177,8 +1156,6 @@ p {
   font-weight: 600;
   text-align: center;
 }
-
-/* MÉTRICAS */
 
 .cases-metrics {
   margin-top: 28px;
@@ -1228,342 +1205,170 @@ p {
   line-height: 1.5;
 }
 
-/* RESPONSIVO dos CASES*/
-
-@media (max-width: 1100px) {
-
-  .cases-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cases-metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 640px) {
-
-  .cases-grid,
-  .cases-metrics {
-    grid-template-columns: 1fr;
-  }
-
-  .case-card {
-    padding: 24px 20px;
-  }
-
-  .metric-item {
-    padding: 22px 18px;
-    border-right: none;
-    border-bottom: 1px solid #edf1f6;
-  }
-
-  .metric-item:last-child {
-    border-bottom: none;
-  }
-
-}
-
 /* =========================================================
-   MÉTODO LS - SIGO | SEÇÃO REFINADA
-========================================================= */
-
-.metodo-platform {
-  padding: 90px 0;
-
-  background:
-    radial-gradient(circle at 80% 20%, rgba(0, 131, 62, .10), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
-}
-
-/* GRID */
-
-.metodo-platform-grid {
-  display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 32px;
-  align-items: start;
-}
-
-/* TEXTO */
-
-.metodo-copy h2 {
-  font-size: clamp(2.4rem, 3.6vw, 4.4rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-
-  margin-bottom: 22px;
-
-  max-width: 700px;
-}
-
-.metodo-copy p {
-  font-size: 1.02rem;
-  line-height: 1.75;
-
-  max-width: 560px;
-
-  margin-bottom: 28px;
-}
-
-/* LISTA */
-
-.metodo-list {
-  display: grid;
-  gap: 14px;
-  margin-top: 26px;
-}
-
-.metodo-list div {
-  position: relative;
-  padding-left: 42px;
-}
-
-.metodo-list div::before {
-  content: "✓";
-
-  position: absolute;
-  left: 0;
-  top: 2px;
-
-  width: 26px;
-  height: 26px;
-
-  border-radius: 50%;
-
-  display: grid;
-  place-items: center;
-
-  background: #edf8f0;
-  color: var(--green);
-
-  font-weight: 900;
-}
-
-.metodo-video::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0) 70%,
-      rgba(7,31,87,.06) 100%
-    );
-
-  pointer-events: none;
-}
-
-.metodo-list strong {
-  display: block;
-
-  color: var(--blue);
-
-  font-weight: 900;
-  font-size: .98rem;
-
-  margin-bottom: 2px;
-}
-
-.metodo-list span {
-  color: var(--muted);
-
-  font-size: .92rem;
-  line-height: 1.55;
-}
-
-/* BOTÕES */
-
-.metodo-actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-
-  margin-top: 30px;
-}
-
-/* VÍDEO / IMAGEM */
-
-.metodo-video {
-  position: relative;
-
-  width: 100%;
-  max-width: 900px;
-
-  margin-left: auto;
-
-  border-radius: 28px;
-  overflow: hidden;
-
-  box-shadow:
-    0 35px 80px rgba(7, 31, 87, .18);
-}
-
-.metodo-video img {
-  width: 100%;
-  display: block;
-
-  object-fit: cover;
-
-  border-radius: 28px;
-}
-
-/* PLAY BUTTON */
-
-.play-button {
-  position: absolute;
-
-  left: 50%;
-  top: 43%;
-
-  transform: translate(-50%, -50%);
-
-  width: 82px;
-  height: 82px;
-
-  border-radius: 50%;
-  border: 0;
-
-  display: grid;
-  place-items: center;
-
-  background: rgba(255,255,255,.82);
-  color: var(--blue);
-  border: 2px solid rgba(38, 180, 87, 0.471);
-
-  font-size: 2rem;
-
-  cursor: pointer;
-
-  backdrop-filter: blur(6px);
-
-  box-shadow: 0 18px 45px rgba(0,0,0,.18);
-}
-
-.platform-badge {
-  position: absolute;
-
-  top: 18px;
-  left: 18px;
-
-  z-index: 3;
-
-  padding: 10px 16px;
-
-  border-radius: 999px;
-
-  background: rgba(7, 31, 87, .88);
-
+   18. ESTRATÉGICO / NORMAS E SISTEMAS
+   ========================================================= */
+.strategic {
+  background: linear-gradient(135deg, var(--blue), var(--green));
   color: #fff;
+}
 
-  font-size: .82rem;
+.strategic h2,
+.strategic p,
+.strategic li {
+  color: #fff;
+}
+
+.strategic .tag {
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+}
+
+.strategic-box {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.strategic-end {
+  grid-column: 1/-1;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .12);
+  font-weight: 900;
+}
+
+.strategic .check-list li::before {
+  color: #fff;
+}
+
+/* =========================================================
+   19. ANTES E DEPOIS / COMPARATIVO
+   ========================================================= */
+.compare-card {
+  padding: 30px;
+}
+
+.compare-card h3 {
+  font-size: 1.5rem;
+}
+
+.compare-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.before {
+  border-top: 6px solid #aab5c2;
+}
+
+.after {
+  border-top: 6px solid var(--green);
+  background: #f8fff9;
+}
+
+/* =========================================================
+   20. CTA FINAL
+   ========================================================= */
+.final-cta {
+  padding: 82px 0;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue) 55%, var(--green));
+  color: #fff;
+}
+
+.final-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.final-cta h2 {
+  color: #fff;
+}
+
+.final-cta p {
+  color: rgba(255, 255, 255, .82);
+  font-size: 1.05rem;
+}
+
+.final-actions {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   21. WHATSAPP FIXO
+   ========================================================= */
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: #fff;
+  text-decoration: none;
   font-weight: 700;
-  letter-spacing: .04em;
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.15);
+  font-size: .95rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-/* =========================================================
-   TABLET
-========================================================= */
 
-@media (max-width: 920px) {
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .22);
+}
 
-  .metodo-platform-grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
+.whatsapp-label {
+  white-space: nowrap;
+}
 
-  .metodo-copy h2 {
-    font-size: 2.9rem;
-  }
-
-  .metodo-video {
-    margin: auto;
-  }
-
+.floating-whatsapp svg {
+  flex-shrink: 0;
 }
 
 /* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 640px) {
-
-  .metodo-platform {
-    padding: 70px 0;
-  }
-
-  .metodo-copy h2 {
-    font-size: 2.2rem;
-    line-height: 1.04;
-  }
-
-  .metodo-copy p {
-    font-size: .96rem;
-  }
-
-  .metodo-list {
-    gap: 12px;
-  }
-
-  .metodo-list div {
-    padding-left: 36px;
-  }
-
-  .metodo-actions {
-    flex-direction: column;
-  }
-
-  .metodo-video {
-    border-radius: 22px;
-  }
-
-  .metodo-video img {
-    border-radius: 22px;
-  }
-
-  .play-button {
-    width: 62px;
-    height: 62px;
-
-    font-size: 1.4rem;
-  }
-
-}
-
-/* =========================================================
-   19. RESPONSIVIDADE | TELAS ATÉ 1180px
+   22. RESPONSIVIDADE | ATÉ 1180px
    ========================================================= */
 @media (max-width: 1180px) {
   .cards-grid.five,
-  .pricing-grid.four {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .pricing-grid.four,
   .maturity-grid,
   .timeline {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .maturity-grid article {
     transform: none !important;
   }
+
+  #planos .container {
+    width: min(96%, 1320px);
+  }
 }
 
 /* =========================================================
-   20. RESPONSIVIDADE | TABLETS E TELAS MÉDIAS
+   23. RESPONSIVIDADE | ATÉ 1100px
+   ========================================================= */
+@media (max-width: 1100px) {
+  .cases-grid,
+  .cases-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   24. RESPONSIVIDADE | TABLET ATÉ 920px
    ========================================================= */
 @media (max-width: 920px) {
   html,
   body {
-    width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
   }
 
@@ -1577,7 +1382,8 @@ p {
   .arch-grid,
   .compare-grid,
   .strategic-box,
-  .final-grid {
+  .final-grid,
+  .metodo-platform-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1586,11 +1392,24 @@ p {
   }
 
   .pricing-grid.four {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .highlighted {
     transform: none;
+  }
+
+  .metodo-platform-grid {
+    gap: 34px;
+  }
+
+  .metodo-copy h2 {
+    font-size: 2.9rem;
+  }
+
+  .metodo-video {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .final-actions {
@@ -1599,11 +1418,13 @@ p {
 }
 
 /* =========================================================
-   21. RESPONSIVIDADE | CELULARES
+   25. RESPONSIVIDADE | MOBILE ATÉ 640px
    ========================================================= */
 @media (max-width: 640px) {
   html,
-  body {
+  body,
+  main,
+  section {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -1613,9 +1434,12 @@ p {
     padding-top: 68px;
   }
 
-  .container {
+  .container,
+  #planos .container {
     width: calc(100% - 28px);
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .topbar {
@@ -1631,6 +1455,8 @@ p {
     height: 68px;
     width: 100%;
     gap: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .brand {
@@ -1640,20 +1466,21 @@ p {
 
   .brand img {
     height: 38px;
-    max-width: 165px;
+    max-width: 150px;
     width: auto;
     object-fit: contain;
   }
 
   .btn-header {
     width: auto;
+    max-width: 120px;
     min-height: 42px;
     padding: 0 14px;
+    margin-right: 6px;
     font-size: .78rem;
     line-height: 1.15;
     white-space: normal;
     text-align: center;
-    max-width: 132px;
     flex-shrink: 0;
   }
 
@@ -1675,6 +1502,11 @@ p {
     line-height: 1.35;
     padding: 8px 14px;
     max-width: 100%;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 8vw, 2.65rem);
+    line-height: 1.1;
   }
 
   .hero h1 {
@@ -1699,10 +1531,12 @@ p {
 
   .btn {
     width: 100%;
+    max-width: 100%;
   }
 
   .hero-actions,
-  .final-actions {
+  .final-actions,
+  .metodo-actions {
     flex-direction: column;
   }
 
@@ -1760,69 +1594,213 @@ p {
     transform: translateY(-50%);
   }
 
- .hero-proof {
-  width: calc(100% - 28px);
-  max-width: 100%;
-  margin: 32px auto 0;
-  padding-left: 0;
-  padding-right: 0;
-  grid-template-columns: 1fr;
-  justify-items: center;
-}
-
-.hero-proof div {
-  width: 100%;
-}
-
-  #planos .container {
-    width: calc(100% - 28px);
+  .hero-proof,
+  .cards-grid.five,
+  .cards-grid.four,
+  .pricing-grid.four,
+  .solution-grid,
+  .belief-grid,
+  .compare-grid,
+  .timeline,
+  .arch-grid,
+  .arch-cards,
+  .cases-grid,
+  .cases-metrics,
+  .maturity-grid,
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    width: 100%;
     max-width: 100%;
   }
 
+  .card,
+  .problem-card,
+  .solution-card,
+  .price-card,
+  .compare-card,
+  .timeline article,
+  .arch-cards article,
+  .case-card,
+  .metric-item,
+  .maturity-grid article,
+  .hero-proof div {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-proof {
+    width: calc(100% - 28px);
+    margin: 32px auto 0;
+    padding-left: 0;
+    padding-right: 0;
+    justify-items: center;
+  }
+
+  .cards-grid.five,
   .pricing-grid.four {
     gap: 22px;
   }
 
+  .problem-card {
+    padding: 26px 24px;
+  }
+
+  .problem-card h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .problem-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .metodo-platform {
+    padding: 70px 0;
+  }
+
+  .metodo-copy h2 {
+    font-size: 2.2rem;
+    line-height: 1.04;
+  }
+
+  .metodo-copy p {
+    font-size: .96rem;
+  }
+
+  .metodo-list {
+    gap: 12px;
+  }
+
+  .metodo-list div {
+    padding-left: 36px;
+  }
+
+  .metodo-video {
+    border-radius: 22px;
+  }
+
+  .metodo-video img {
+    border-radius: 22px;
+  }
+
+  .play-button {
+    width: 62px;
+    height: 62px;
+    font-size: 1.4rem;
+  }
+
+  .platform-badge {
+    top: 12px;
+    left: 12px;
+    padding: 8px 12px;
+    font-size: .68rem;
+  }
+
   .price-card {
-    padding: 26px 22px;
+    padding: 28px 24px;
+    overflow: visible;
+  }
+
+  .price {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
   }
 
   .price strong {
     font-size: 2.15rem;
+    line-height: 1.05;
   }
 
   .price.consult strong {
     font-size: 1.65rem;
+    line-height: 1.1;
+  }
+
+  .ideal {
+    min-height: auto;
+  }
+
+  .best-tag {
+    top: -18px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    max-width: 180px;
+    white-space: nowrap;
+    padding: 8px 18px;
+    font-size: .74rem;
   }
 
   .belief-box {
     padding: 28px 20px;
   }
 
+  .case-card {
+    padding: 24px 20px;
+  }
+
+  .metric-item {
+    padding: 22px 18px;
+    border-right: none;
+    border-bottom: 1px solid #edf1f6;
+  }
+
+  .metric-item:last-child {
+    border-bottom: none;
+  }
+
   .floating-whatsapp {
-    right: 16px;
-    bottom: 16px;
-    padding: 12px 14px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    right: 14px;
+    bottom: 14px;
+    justify-content: center;
     font-size: .88rem;
+  }
+
+  .floating-whatsapp svg {
+    width: 22px;
+    height: 22px;
   }
 
   .whatsapp-label {
     display: none;
   }
-
-  /* Respiro do cabeçalho no mobile */
-.topbar-inner {
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
-.brand img {
-  max-width: 150px;
-}
+/* =========================================================
+   26. RESPONSIVIDADE | CELULARES PEQUENOS ATÉ 390px
+   ========================================================= */
+@media (max-width: 390px) {
+  .container,
+  #planos .container {
+    width: calc(100% - 24px);
+  }
 
-.btn-header {
-  max-width: 120px;
-  margin-right: 6px;
-}
+  .brand img {
+    max-width: 142px;
+  }
 
+  .btn-header {
+    max-width: 112px;
+    padding: 0 12px;
+    font-size: .74rem;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .metodo-copy h2 {
+    font-size: 2.05rem;
+  }
+
+  .price strong {
+    font-size: 2rem;
+  }
 }

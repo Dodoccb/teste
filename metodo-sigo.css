@@ -1,6 +1,7 @@
 /* =========================================================
    LS Gestão | Método LS - SIGO
-   CSS principal revisado, organizado e responsivo
+   Arquivo CSS organizado e comentado
+   Observação: estrutura, classes e propriedades preservadas.
    ========================================================= */
 
 /* =========================================================
@@ -25,7 +26,7 @@
 }
 
 /* =========================================================
-   2. RESET E BASE
+   2. RESET E CONFIGURAÇÕES BASE
    ========================================================= */
 * {
   box-sizing: border-box;
@@ -35,19 +36,12 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-}
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: var(--text);
   background: #fff;
   line-height: 1.65;
-  overflow-x: hidden;
 }
 
 a {
@@ -55,20 +49,13 @@ a {
   color: inherit;
 }
 
-img,
-svg,
-video {
-  max-width: 100%;
-}
-
 .container {
   width: min(var(--container), calc(100% - 32px));
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 /* =========================================================
-   3. HEADER / TOPO
+   3. HEADER / TOPO FIXO
    ========================================================= */
 .topbar {
   position: sticky;
@@ -91,17 +78,16 @@ video {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.1rem;
   font-weight: 900;
   color: var(--blue);
-  min-width: 0;
+  font-size: 1.1rem;
 }
 
-.brand img {
+.brand img{
   height: 44px;
   width: auto;
   object-fit: contain;
-  display: block;
+  display:block;
 }
 
 .brand-mark {
@@ -195,10 +181,9 @@ video {
   position: relative;
   overflow: hidden;
   padding: 70px 0 45px;
-  background:
-    radial-gradient(circle at 75% 18%, rgba(0, 131, 62, .16), transparent 28%),
-    radial-gradient(circle at 10% 0%, rgba(0, 26, 141, .14), transparent 30%),
-    linear-gradient(180deg, #f5f8ff 0%, #fff 55%, #f7fbf8 100%);
+  background: radial-gradient(circle at 75% 18%, rgba(0, 131, 62, .16), transparent 28%),
+              radial-gradient(circle at 10% 0%, rgba(0, 26, 141, .14), transparent 30%),
+              linear-gradient(180deg, #f5f8ff 0%, #fff 55%, #f7fbf8 100%);
 }
 
 .hero::before {
@@ -253,7 +238,7 @@ video {
   color: var(--green);
   font-size: .56em;
   line-height: 1.1;
-  margin-top: 14px;
+  margin-top: 10px;
   letter-spacing: -.02em;
 }
 
@@ -273,8 +258,7 @@ video {
 }
 
 .hero-actions,
-.final-actions,
-.metodo-actions {
+.final-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -284,6 +268,7 @@ video {
   width: min(var(--container), calc(100% - 32px));
   margin: 42px auto 0;
   padding-left: 0;
+
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
@@ -297,9 +282,11 @@ video {
   padding: 24px 22px;
   box-shadow: var(--shadow);
   min-height: 50px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
   transition: .25s ease;
 }
 
@@ -319,7 +306,7 @@ video {
 }
 
 /* =========================================================
-   6. HERO | VISUAL DO MÉTODO / ÓRBITA
+   6. VISUAL DO MÉTODO / ÓRBITA DO HERO
    ========================================================= */
 .hero-visual {
   min-height: 470px;
@@ -334,9 +321,8 @@ video {
   width: min(470px, 90vw);
   aspect-ratio: 1;
   border-radius: 50%;
-  background:
-    radial-gradient(circle, #fff 0 25%, transparent 26%),
-    conic-gradient(from 0deg, rgba(0, 26, 141, .12), rgba(0, 131, 62, .16), rgba(0, 26, 141, .12));
+  background: radial-gradient(circle, #fff 0 25%, transparent 26%),
+              conic-gradient(from 0deg, rgba(0, 26, 141, .12), rgba(0, 131, 62, .16), rgba(0, 26, 141, .12));
   border: 1px solid #dce8f3;
   box-shadow: var(--shadow-2);
   margin-top: 0;
@@ -365,7 +351,7 @@ video {
 
 .orbit-item {
   position: absolute;
-  background: rgba(255, 255, 255, .96);
+  background: rgba(255,255,255,.96);
   border: 1px solid #d7e2ee;
   border-radius: 16px;
   padding: 12px 18px;
@@ -376,6 +362,8 @@ video {
   white-space: nowrap;
   text-align: center;
 }
+
+/* 4 caixas equilibradas na órbita*/
 
 .item-1 {
   top: 42px;
@@ -435,7 +423,7 @@ video {
   line-height: 1.7;
   color: var(--muted);
   max-width: 860px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 h2 {
@@ -457,7 +445,7 @@ p {
 }
 
 /* =========================================================
-   8. CARDS GERAIS
+   8. CARDS GERAIS E BLOCO DE PROBLEMAS
    ========================================================= */
 .cards-grid {
   display: grid;
@@ -466,10 +454,6 @@ p {
 
 .cards-grid.five {
   grid-template-columns: repeat(5, 1fr);
-}
-
-.cards-grid.four {
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .card,
@@ -485,9 +469,6 @@ p {
   box-shadow: var(--shadow);
 }
 
-/* =========================================================
-   9. PROBLEMAS
-   ========================================================= */
 .problem-card {
   padding: 24px 20px;
 }
@@ -505,7 +486,7 @@ p {
 }
 
 .statement {
-  margin-top: 24px;
+  margin-top: 14px;
   padding: 24px;
   border-radius: var(--radius);
   background: linear-gradient(90deg, var(--blue), var(--green));
@@ -515,8 +496,37 @@ p {
   box-shadow: var(--shadow-2);
 }
 
+.price-card h4 {
+  margin: 18px 0 8px;
+  color: var(--blue);
+  font-size: .95rem;
+  font-weight: 900;
+}
+
+.dark-plan h4 {
+  color: #fff;
+}
+
+.plan-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 14px;
+  margin: 8px 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.dark-plan .plan-pill {
+  color: #fff;
+}
+
 /* =========================================================
-   10. REPOSICIONAMENTO / CRENÇA
+   9. BLOCO DE REPOSICIONAMENTO / CRENÇA
    ========================================================= */
 .belief {
   background: #fff;
@@ -570,7 +580,7 @@ p {
 }
 
 .belief-end {
-  margin-top: 30px;
+  margin-top: 20px;
   padding-top: 24px;
   border-top: 1px solid #dbe8f0;
   color: var(--blue);
@@ -579,7 +589,7 @@ p {
 }
 
 /* =========================================================
-   11. SOLUÇÃO
+   10. SOLUÇÃO / CARDS DO MÉTODO
    ========================================================= */
 .solution-grid {
   grid-template-columns: repeat(3, 1fr);
@@ -630,7 +640,7 @@ p {
 }
 
 /* =========================================================
-   12. TIMELINE / COMO FUNCIONA
+   11. TIMELINE / COMO FUNCIONA
    ========================================================= */
 .timeline {
   display: grid;
@@ -667,7 +677,7 @@ p {
 }
 
 /* =========================================================
-   13. ARQUITETURA / MÉTODO ANTIGO
+   12. ARQUITETURA DO MÉTODO
    ========================================================= */
 .architecture {
   background: #fff;
@@ -689,7 +699,7 @@ p {
 }
 
 /* =========================================================
-   14. MATURIDADE / MODELOS
+   13. MATURIDADE / CARDS EM ESCADA
    ========================================================= */
 .maturity-grid {
   display: grid;
@@ -729,163 +739,19 @@ p {
   color: #fff;
 }
 
-.cards-grid.four .card {
-  padding: 28px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 180px;
-}
-
 /* =========================================================
-   15. MÉTODO LS - SIGO COM PLATAFORMA
+   14. PLANOS / PRICING
    ========================================================= */
-.metodo-platform {
-  padding: 90px 0;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(0, 131, 62, .10), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
-}
-
-.metodo-platform-grid {
-  display: grid;
-  grid-template-columns: .92fr 1.08fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.metodo-copy h2 {
-  font-size: clamp(2.4rem, 3.6vw, 4.4rem);
-  line-height: 1.02;
-  letter-spacing: -.04em;
-  margin-bottom: 22px;
-  max-width: 700px;
-}
-
-.metodo-copy p {
-  font-size: 1.02rem;
-  line-height: 1.75;
-  max-width: 560px;
-  margin-bottom: 28px;
-}
-
-.metodo-list {
-  display: grid;
-  gap: 14px;
-  margin-top: 26px;
-}
-
-.metodo-list div {
-  position: relative;
-  padding-left: 42px;
-}
-
-.metodo-list div::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #edf8f0;
-  color: var(--green);
-  font-weight: 900;
-}
-
-.metodo-list strong {
-  display: block;
-  color: var(--blue);
-  font-weight: 900;
-  font-size: .98rem;
-  margin-bottom: 2px;
-}
-
-.metodo-list span {
-  color: var(--muted);
-  font-size: .92rem;
-  line-height: 1.55;
-}
-
-.metodo-actions {
-  margin-top: 30px;
-}
-
-.metodo-video {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 35px 80px rgba(7, 31, 87, .18);
-}
-
-.metodo-video::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 70%, rgba(7,31,87,.06) 100%);
-  pointer-events: none;
-}
-
-.metodo-video img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 28px;
-}
-
-.play-button {
-  position: absolute;
-  left: 50%;
-  top: 43%;
-  transform: translate(-50%, -50%);
-  width: 82px;
-  height: 82px;
-  border-radius: 50%;
-  border: 2px solid rgba(38, 180, 87, .47);
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,.82);
-  color: var(--blue);
-  font-size: 2rem;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 18px 45px rgba(0,0,0,.18);
-}
-
-.platform-badge {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  z-index: 3;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(7, 31, 87, .88);
-  color: #fff;
-  font-size: .82rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,.15);
-}
-
-/* =========================================================
-   16. PLANOS / PRICING
-   ========================================================= */
-#planos .container {
-  width: min(98%, 1720px);
-}
-
 .pricing-grid.four {
   display: grid;
   grid-template-columns: repeat(4, minmax(300px, 1fr));
   gap: 24px;
   align-items: stretch;
   width: 100%;
+} 
+
+#planos .container {
+  width: min(98%, 1720px);
 }
 
 .price-card {
@@ -893,13 +759,6 @@ p {
   padding: 28px 22px;
   display: flex;
   flex-direction: column;
-}
-
-.price-card h4 {
-  margin: 18px 0 8px;
-  color: var(--blue);
-  font-size: .95rem;
-  font-weight: 900;
 }
 
 .plan-head span {
@@ -975,20 +834,25 @@ p {
   overflow: visible;
 }
 
-.best-tag {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  padding: 8px 22px;
-  border-radius: 999px;
-  background: var(--blue);
-  color: #fff;
-  font-size: .78rem;
-  font-weight: 800;
-  letter-spacing: .02em;
-  box-shadow: 0 10px 25px rgba(13, 38, 165, .18);
+.best-tag{
+  position:absolute;
+  top:-16px;
+  left:50%;
+  transform:translateX(-50%);
+
+  background:var(--blue);
+  color:#fff;
+
+  padding:8px 22px;
+  border-radius:999px;
+
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.02em;
+
+  box-shadow:0 10px 25px rgba(13,38,165,.18);
+
+  z-index:5;
 }
 
 .ribbon {
@@ -1010,7 +874,6 @@ p {
 }
 
 .dark-plan h3,
-.dark-plan h4,
 .dark-plan p,
 .dark-plan li,
 .dark-plan .plan-head span,
@@ -1024,26 +887,8 @@ p {
   color: #fff;
 }
 
-.dark-plan .plan-pill {
-  color: #fff;
-}
-
-.plan-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 6px 14px;
-  margin: 8px 0 10px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  color: var(--blue);
-  font-size: .85rem;
-  font-weight: 900;
-}
-
 .contract-box {
-  margin-top: 26px;
+  margin-top: 16px;
   padding: 28px;
   border-radius: var(--radius);
   background: #f4f8ff;
@@ -1056,17 +901,176 @@ p {
 }
 
 /* =========================================================
-   17. CASES
+   15. BLOCO ESTRATÉGICO / NORMAS E SISTEMAS
    ========================================================= */
+.strategic {
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: #fff;
+}
+
+.strategic h2,
+.strategic p,
+.strategic li {
+  color: #fff;
+}
+
+.strategic .tag {
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+}
+
+.strategic-box {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.strategic-end {
+  grid-column: 1/-1;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .12);
+  font-weight: 900;
+}
+
+.strategic .check-list li::before {
+  color: #fff;
+}
+
+/* =========================================================
+   16. ANTES E DEPOIS
+   ========================================================= */
+.compare-card {
+  padding: 30px;
+}
+
+.compare-card h3 {
+  font-size: 1.5rem;
+}
+
+.compare-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.before {
+  border-top: 6px solid #aab5c2;
+}
+
+.after {
+  border-top: 6px solid var(--green);
+  background: #f8fff9;
+}
+
+/* =========================================================
+   17. CTA FINAL
+   ========================================================= */
+.final-cta {
+  padding: 82px 0;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue) 55%, var(--green));
+  color: #fff;
+}
+
+.final-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.final-cta h2 {
+  color: #fff;
+}
+
+.final-cta p {
+  color: rgba(255, 255, 255, .82);
+  font-size: 1.05rem;
+}
+
+.final-actions {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   CTA FIXO WHATSAPP
+========================================================= */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    var(--green)
+  );
+
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: .95rem;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.18);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.22);
+}
+
+.whatsapp-label {
+  white-space: nowrap;
+}
+
+.floating-whatsapp svg {
+  flex-shrink: 0;
+}
+
+
+
+/* =========================================================
+   18. AJUSTE DOS CARDS DO BLOCO MODELOS DE ENTREGA
+   ========================================================= */
+.cards-grid.four .card {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
+}
+
+/* =========================================================
+  Adicionado dia 13.05 após followup com cliente o bloco CASES
+========================================================= */
+
 .cases-section {
-  background: #fff;
+  background: #ffffff;
 }
 
 .cases-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
-  margin-top: 42px;
+  margin-top: 22px;
 }
 
 .case-card {
@@ -1074,7 +1078,7 @@ p {
   border: 1px solid #e5e9f2;
   border-radius: 24px;
   padding: 28px 24px;
-  box-shadow: 0 10px 28px rgba(20, 30, 60, .04);
+  box-shadow: 0 10px 28px rgba(20, 30, 60, 0.04);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1128,11 +1132,14 @@ p {
   width: 42px;
   height: 42px;
   min-width: 42px;
+
   border-radius: 50%;
   background: #edf8f0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 1rem;
 }
 
@@ -1151,14 +1158,16 @@ p {
 
 .case-footer-text {
   display: block;
-  margin-top: 20px;
+  margin-top: 10px;
   color: var(--blue);
   font-weight: 600;
   text-align: center;
 }
 
+/* MÉTRICAS */
+
 .cases-metrics {
-  margin-top: 28px;
+  margin-top: 18px;
   border: 1px solid #dfe7df;
   border-left: 4px solid var(--green);
   border-radius: 24px;
@@ -1205,136 +1214,227 @@ p {
   line-height: 1.5;
 }
 
+
 /* =========================================================
-   18. ESTRATÉGICO / NORMAS E SISTEMAS
-   ========================================================= */
-.strategic {
-  background: linear-gradient(135deg, var(--blue), var(--green));
-  color: #fff;
+   SIGO FEATURES BASEADO NAS MÉTRICAS
+========================================================= */
+
+.sigo-metrics {
+  margin-top: 14px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.strategic h2,
-.strategic p,
-.strategic li {
-  color: #fff;
+.sigo-metrics .metric-item {
+  min-height: 150px;
 }
 
-.strategic .tag {
-  background: rgba(255, 255, 255, .14);
-  color: #fff;
+/* TABLET */
+@media (max-width: 980px) {
+  .sigo-metrics {
+    grid-template-columns: 1fr;
+  }
 }
 
-.strategic-box {
+/* RESPONSIVO dos CASES*/
+
+
+
+/* =========================================================
+   MÉTODO LS - SIGO | SEÇÃO REFINADA
+========================================================= */
+
+.metodo-platform {
+  padding: 90px 0;
+
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0, 131, 62, .10), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+}
+
+/* GRID */
+
+.metodo-platform-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 28px;
-  align-items: center;
+  grid-template-columns: .86fr 1.14fr;
+  gap: 44px;
+  align-items: start;
 }
 
-.strategic-end {
-  grid-column: 1/-1;
-  padding: 20px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, .12);
-  font-weight: 900;
+/* TEXTO */
+
+.metodo-copy h2 {
+  font-size: clamp(2rem, 2.85vw, 3.65rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+  max-width: 610px;
 }
 
-.strategic .check-list li::before {
-  color: #fff;
+.metodo-copy p {
+  font-size: .98rem;
+  line-height: 1.72;
+   grid-column: 1;
+  max-width: 560px;
+  margin-bottom: 26px;
 }
 
-/* =========================================================
-   19. ANTES E DEPOIS / COMPARATIVO
-   ========================================================= */
-.compare-card {
-  padding: 30px;
+/* LISTA */
+
+.metodo-video::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0) 70%,
+      rgba(7,31,87,.06) 100%
+    );
+
+  pointer-events: none;
 }
 
-.compare-card h3 {
-  font-size: 1.5rem;
-}
+/* BOTÕES */
 
-.compare-card ul {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-}
-
-.before {
-  border-top: 6px solid #aab5c2;
-}
-
-.after {
-  border-top: 6px solid var(--green);
-  background: #f8fff9;
-}
-
-/* =========================================================
-   20. CTA FINAL
-   ========================================================= */
-.final-cta {
-  padding: 82px 0;
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue) 55%, var(--green));
-  color: #fff;
-}
-
-.final-grid {
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.final-cta h2 {
-  color: #fff;
-}
-
-.final-cta p {
-  color: rgba(255, 255, 255, .82);
-  font-size: 1.05rem;
-}
-
-.final-actions {
-  justify-content: flex-end;
-}
-
-/* =========================================================
-   21. WHATSAPP FIXO
-   ========================================================= */
-.floating-whatsapp {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 999;
+.metodo-actions {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  margin-top: 10px;
+}
+
+/* VÍDEO / IMAGEM */
+
+.metodo-video {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin-left: auto;
+
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 35px 80px rgba(7, 31, 87, .18);
+    grid-column: 2;
+}
+
+.metodo-video img {
+  width: 100%;
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 28px;
+}
+
+/* PLAY BUTTON */
+
+.play-button {
+  position: absolute;
+
+  left: 50%;
+  top: 43%;
+
+  transform: translate(-50%, -50%);
+
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+  border: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(255,255,255,.82);
+  color: var(--blue);
+  border: 2px solid rgba(38, 180, 87, 0.471);
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
+}
+
+.platform-badge {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 3;
+
+  padding: 10px 16px;
+
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--blue), var(--green));
+
+  background: rgba(7, 31, 87, .88);
+
   color: #fff;
-  text-decoration: none;
+
+  font-size: .82rem;
   font-weight: 700;
-  font-size: .95rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
+  letter-spacing: .04em;
 
-.floating-whatsapp:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .22);
-}
+  backdrop-filter: blur(10px);
 
-.whatsapp-label {
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+}
+/* =========================================================
+   TABLET
+========================================================= */
+
+
+
+/* =========================================================
+   OUTROS
+========================================================= */
+
+/* Ajuste botão do topo - Site institucional */
+.btn-site {
   white-space: nowrap;
 }
 
-.floating-whatsapp svg {
-  flex-shrink: 0;
+/* Mobile */
+@media (max-width: 640px) {
+
+  .nav {
+    display: none;
+  }
+
+  .topbar-inner {
+    padding-left: 14px;
+    padding-right: 14px;
+    gap: 10px;
+  }
+
+  .brand img {
+    max-width: 145px;
+  }
+
+  .btn-header.btn-site {
+    max-width: 138px;
+    padding: 11px 14px;
+    font-size: .78rem;
+    line-height: 1.1;
+    border-radius: 999px;
+    text-align: center;
+  }
 }
 
 /* =========================================================
-   22. RESPONSIVIDADE | ATÉ 1180px
+
+/* =========================================================
+   19. RESPONSIVIDADE | TELAS ATÉ 1180px
    ========================================================= */
 @media (max-width: 1180px) {
   .cards-grid.five,
@@ -1354,7 +1454,7 @@ p {
 }
 
 /* =========================================================
-   23. RESPONSIVIDADE | ATÉ 1100px
+   20. RESPONSIVIDADE | TELAS ATÉ 1100px
    ========================================================= */
 @media (max-width: 1100px) {
   .cases-grid,
@@ -1364,7 +1464,16 @@ p {
 }
 
 /* =========================================================
-   24. RESPONSIVIDADE | TABLET ATÉ 920px
+   21. RESPONSIVIDADE | TABLETS ATÉ 980px
+   ========================================================= */
+@media (max-width: 980px) {
+  .sigo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   22. RESPONSIVIDADE | TABLETS ATÉ 920px
    ========================================================= */
 @media (max-width: 920px) {
   html,
@@ -1404,7 +1513,7 @@ p {
   }
 
   .metodo-copy h2 {
-    font-size: 2.9rem;
+    font-size: 2.75rem;
   }
 
   .metodo-video {
@@ -1418,7 +1527,7 @@ p {
 }
 
 /* =========================================================
-   25. RESPONSIVIDADE | MOBILE ATÉ 640px
+   23. RESPONSIVIDADE | MOBILE ATÉ 640px
    ========================================================= */
 @media (max-width: 640px) {
   html,
@@ -1607,6 +1716,7 @@ p {
   .cases-grid,
   .cases-metrics,
   .maturity-grid,
+  .sigo-grid,
   .two-columns {
     display: grid;
     grid-template-columns: 1fr !important;
@@ -1624,7 +1734,8 @@ p {
   .case-card,
   .metric-item,
   .maturity-grid article,
-  .hero-proof div {
+  .hero-proof div,
+  .sigo-card {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -1662,20 +1773,12 @@ p {
   }
 
   .metodo-copy h2 {
-    font-size: 2.2rem;
-    line-height: 1.04;
+    font-size: 2.05rem;
+    line-height: 1.08;
   }
 
   .metodo-copy p {
     font-size: .96rem;
-  }
-
-  .metodo-list {
-    gap: 12px;
-  }
-
-  .metodo-list div {
-    padding-left: 36px;
   }
 
   .metodo-video {
@@ -1698,6 +1801,148 @@ p {
     padding: 8px 12px;
     font-size: .68rem;
   }
+
+/* =========================================================
+   FEATURES SIGO | PLATAFORMA NA PRÁTICA
+========================================================= */
+
+
+/* =========================================================
+   AJUSTE MOBILE | MÉTODO: imagem antes do texto
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .metodo-platform-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .metodo-video {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 18px;
+  }
+
+  .metodo-copy {
+    order: 2;
+  }
+
+  .metodo-copy h2,
+  .metodo-copy p {
+    max-width: 100%;
+  }
+}
+
+.sigo-features {
+  margin-top: 36px;
+  padding: 42px 28px;
+  border-radius: 30px;
+  background: #fff;
+  border: 1px solid #e7edf7;
+  box-shadow: 0 18px 55px rgba(13, 39, 80, .07);
+  text-align: center;
+}
+
+.sigo-features .tag {
+  margin-bottom: 16px;
+}
+
+.sigo-features h3 {
+  color: var(--blue);
+  font-size: clamp(1.7rem, 2.4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.12;
+  margin: 0 0 10px;
+}
+
+.sigo-subtitle {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.sigo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+}
+
+.sigo-card {
+  padding: 10px 18px 4px;
+  text-align: center;
+  border-right: 1px solid #dfe7f2;
+}
+
+.sigo-card:last-child {
+  border-right: none;
+}
+
+.icon-circle {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+  background: rgba(0, 131, 62, .10);
+  color: var(--green);
+}
+
+.sigo-card h4 {
+  color: var(--blue);
+  font-size: .98rem;
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.sigo-card p {
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* TABLET */
+@media (max-width: 1180px) {
+  .sigo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+
+  .sigo-card:nth-child(3) {
+    border-right: none;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .sigo-features {
+    padding: 32px 20px;
+  }
+
+  .sigo-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .sigo-card {
+    border-right: none;
+    border-bottom: 1px solid #dfe7f2;
+    padding-bottom: 24px;
+  }
+
+  .sigo-card:last-child {
+    border-bottom: none;
+  }
+}
 
   .price-card {
     padding: 28px 24px;
@@ -1774,7 +2019,7 @@ p {
 }
 
 /* =========================================================
-   26. RESPONSIVIDADE | CELULARES PEQUENOS ATÉ 390px
+   24. RESPONSIVIDADE | CELULARES PEQUENOS ATÉ 390px
    ========================================================= */
 @media (max-width: 390px) {
   .container,
@@ -1797,7 +2042,7 @@ p {
   }
 
   .metodo-copy h2 {
-    font-size: 2.05rem;
+    font-size: 1.95rem;
   }
 
   .price strong {

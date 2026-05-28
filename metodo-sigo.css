@@ -1338,7 +1338,7 @@ p {
   position: absolute;
 
   left: 50%;
-  top: 43%;
+  top: 50%;
 
   transform: translate(-50%, -50%);
 
@@ -1399,7 +1399,7 @@ p {
    OUTROS
 ========================================================= */
 
-/* Ajuste botão do topo - Site institucional */
+/* Ajuste botão do topo - Conheça a LS Gestão */
 .btn-site {
   white-space: nowrap;
 }

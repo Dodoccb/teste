@@ -127,11 +127,6 @@ if (form) {
       'Mensagem: ' + (data.get('mensagem') || '')
     ].join('\n');
 
-    form.reset();
-
-    const popupMessage = 'Sua MSG foi enviada, agora envie imagens direto ao Contato de WhatsApp da loja.';
-    window.alert(popupMessage);
-
     window.open(
       'https://wa.me/5541999760382?text=' + encodeURIComponent(message),
       '_blank',

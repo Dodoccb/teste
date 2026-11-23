@@ -1,0 +1,19 @@
+ESPECIALISTAS DO GRUPO FDG
+
+As fotos dos especialistas ficam nesta pasta.
+
+Para adicionar, alterar, organizar ou retirar um profissional:
+1. Abra EDITAR-ESPECIALISTAS.cmd na pasta principal do projeto.
+2. Acesse http://127.0.0.1:4174 no navegador.
+3. Edite os dados ou clique em Adicionar especialista.
+4. Escolha uma foto individual, de preferência vertical.
+5. Use Exibir no site para mostrar ou ocultar um profissional.
+6. Clique em Salvar e atualizar o site.
+
+O editor atualiza as páginas e SITE-FDG-PARA-PUBLICAR.zip.
+Nenhuma alteração é publicada automaticamente na internet.
+Para encerrar o editor, pressione Ctrl+C na janela que foi aberta.
+
+Dados do cadastro: content/especialistas.json
+Backups automáticos: content/backups-especialistas/
+As artes originais não são apagadas ao ocultar um especialista.

@@ -1,0 +1,158 @@
+[
+  {
+    "slug": "comunicacao-de-alta-performance",
+    "nome": "Comunicação de Alta Performance",
+    "subtitulo": "Como falar, ouvir e conectar-se.",
+    "nucleo": "empresas",
+    "publico": "Lideranças, equipes e profissionais que desejam desenvolver sua comunicação.",
+    "necessidade": "Conversas mais claras, escuta e conexão no ambiente de trabalho.",
+    "temas": [
+      "Clareza na comunicação",
+      "Escuta e assertividade",
+      "Relações e alinhamentos"
+    ],
+    "objetivo": "Desenvolver uma comunicação mais consciente e aplicável à rotina profissional.",
+    "formatos": [
+      "Palestras executivas",
+      "Treinamentos intensivos",
+      "Imersões corporativas",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "a-arte-da-negociacao",
+    "nome": "A Arte da Negociação",
+    "subtitulo": "Estratégias para negociar e vender em ambientes complexos.",
+    "nucleo": "empresas",
+    "publico": "Empresários, gestores e profissionais comerciais.",
+    "necessidade": "Preparação para negociações e relações comerciais em contextos complexos.",
+    "temas": [
+      "Estratégias de negociação",
+      "Geração de valor",
+      "Acordos que preservam relacionamentos"
+    ],
+    "objetivo": "Ampliar a compreensão dos desafios da negociação e desenvolver práticas para o contexto comercial.",
+    "formatos": [
+      "Palestras executivas",
+      "Treinamentos intensivos",
+      "Imersões corporativas",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "lideranca-que-move",
+    "nome": "Liderança que Move",
+    "subtitulo": "Como influenciar, desenvolver pessoas e transformar resultados.",
+    "nucleo": "empresas",
+    "publico": "Líderes, gestores e profissionais em desenvolvimento de liderança.",
+    "necessidade": "Lideranças preparadas para orientar equipes e desenvolver pessoas.",
+    "temas": [
+      "Liderança e protagonismo",
+      "Confiança",
+      "Desenvolvimento de equipes"
+    ],
+    "objetivo": "Fortalecer o exercício da liderança com atenção às pessoas e ao contexto da organização.",
+    "formatos": [
+      "Palestras executivas",
+      "Treinamentos intensivos",
+      "Imersões corporativas",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "inteligencia-emocional-na-pratica",
+    "nome": "Inteligência Emocional na Prática",
+    "subtitulo": "Como transformar emoções em decisões mais inteligentes.",
+    "nucleo": "empresas",
+    "publico": "Lideranças, equipes e profissionais.",
+    "necessidade": "Mais consciência emocional nas decisões e nos relacionamentos profissionais.",
+    "temas": [
+      "Consciência emocional",
+      "Emoções e decisões",
+      "Relacionamentos no trabalho"
+    ],
+    "objetivo": "Promover reflexão e desenvolvimento de habilidades emocionais aplicadas ao cotidiano.",
+    "formatos": [
+      "Palestras executivas",
+      "Treinamentos intensivos",
+      "Imersões corporativas",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "educacao-sem-desgastar",
+    "nome": "Educação sem Desgastar",
+    "subtitulo": "Inteligência emocional para professores: cuidar de quem cuida.",
+    "nucleo": "educacao",
+    "publico": "Professores, educadores e equipes de instituições de ensino.",
+    "necessidade": "Cuidado e desenvolvimento emocional de quem educa.",
+    "temas": [
+      "Inteligência emocional na educação",
+      "Relações no ambiente escolar",
+      "Cuidado com o educador"
+    ],
+    "objetivo": "Apoiar educadores no desenvolvimento emocional e nas relações da prática educativa.",
+    "formatos": [
+      "Palestras para escolas, famílias e casais",
+      "Workshops com adolescentes e imersões para professores",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "pais-em-alerta",
+    "nome": "Pais em Alerta",
+    "subtitulo": "Como resgatar nossos filhos em tempos de desconexão.",
+    "nucleo": "educacao",
+    "publico": "Pais, responsáveis, famílias e instituições de ensino.",
+    "necessidade": "Diálogo e conexão entre pais e filhos.",
+    "temas": [
+      "Conexão familiar",
+      "Diálogo entre gerações",
+      "Presença e responsabilidade"
+    ],
+    "objetivo": "Contribuir para relações familiares mais conscientes e próximas.",
+    "formatos": [
+      "Palestras para escolas, famílias e casais",
+      "Workshops com adolescentes e imersões para professores",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "identidade-inabalavel",
+    "nome": "Identidade Inabalável",
+    "subtitulo": "Princípios que transformam.",
+    "nucleo": "educacao",
+    "publico": "Jovens e adolescentes, com adequação do conteúdo à faixa etária.",
+    "necessidade": "Reflexão sobre identidade, valores e escolhas para a vida.",
+    "temas": [
+      "Identidade e propósito",
+      "Princípios e valores",
+      "Escolhas e responsabilidade"
+    ],
+    "objetivo": "Promover desenvolvimento pessoal e reflexão sobre identidade e visão de futuro.",
+    "formatos": [
+      "Palestras para escolas, famílias e casais",
+      "Workshops com adolescentes e imersões para professores",
+      "Programas de desenvolvimento contínuo"
+    ]
+  },
+  {
+    "slug": "alianca-inabalavel",
+    "nome": "Aliança Inabalável",
+    "subtitulo": "Princípios para construir um casamento que permanece.",
+    "nucleo": "educacao",
+    "publico": "Casais e famílias.",
+    "necessidade": "Fortalecimento dos relacionamentos e da vida em família.",
+    "temas": [
+      "Princípios no relacionamento",
+      "Diálogo e convivência",
+      "Construção da vida a dois"
+    ],
+    "objetivo": "Promover reflexão sobre os fundamentos e o cuidado com o relacionamento conjugal.",
+    "formatos": [
+      "Palestras para escolas, famílias e casais",
+      "Workshops com adolescentes e imersões para professores",
+      "Programas de desenvolvimento contínuo"
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "nome": "Lucas Astori",
+    "slug": "lucas-astori",
+    "imagem": "lucas-astori.png",
+    "area": "Comportamento humano e liderança",
+    "bio": "CEO e fundador do Grupo FDG. Atua em comportamento humano e liderança.",
+    "temas": [
+      "Negociação",
+      "Geração de valor",
+      "Construção de acordos que preservam relacionamentos"
+    ],
+    "programa": "a-arte-da-negociacao",
+    "programaNome": "A Arte da Negociação",
+    "ativo": true,
+    "tipo": "arte",
+    "zoom": 220,
+    "x": 95,
+    "y": 29
+  },
+  {
+    "nome": "Fabiola Luz",
+    "slug": "fabiola-luz",
+    "imagem": "fabiola-luz.png",
+    "area": "Desenvolvimento humano, PNL e inteligência emocional",
+    "bio": "Especialista em Desenvolvimento Humano, PNL e Inteligência Emocional.",
+    "temas": [
+      "Clareza na comunicação",
+      "Escuta e assertividade",
+      "Relações, alinhamentos e resultados"
+    ],
+    "programa": "comunicacao-de-alta-performance",
+    "programaNome": "Comunicação de Alta Performance",
+    "ativo": true,
+    "tipo": "arte",
+    "zoom": 220,
+    "x": 95,
+    "y": 29
+  },
+  {
+    "nome": "Dangler Simão",
+    "slug": "dangler-simao",
+    "imagem": "dangler-simao.png",
+    "area": "Liderança, inteligência interpessoal e comunicação eficaz",
+    "bio": "Instrutor certificado pela Fundação Napoleon Hill. Especialista em Liderança, Inteligência Interpessoal e Comunicação Eficaz.",
+    "temas": [
+      "Liderança e protagonismo",
+      "Confiança",
+      "Desenvolvimento de equipes"
+    ],
+    "programa": "lideranca-que-move",
+    "programaNome": "Liderança que Move",
+    "ativo": true,
+    "tipo": "arte",
+    "zoom": 240,
+    "x": 100,
+    "y": 29
+  },
+  {
+    "nome": "Ane Kallyne",
+    "slug": "ane-kallyne",
+    "imagem": "equipe-summit.png",
+    "area": "Psicologia, saúde emocional e desenvolvimento humano",
+    "bio": "Psicóloga. Atua em Saúde Emocional e Desenvolvimento Humano.",
+    "temas": [
+      "Saúde emocional",
+      "Desenvolvimento humano"
+    ],
+    "programa": null,
+    "programaNome": null,
+    "ativo": false,
+    "tipo": "arte",
+    "zoom": 450,
+    "x": 98,
+    "y": 61
+  }
+]

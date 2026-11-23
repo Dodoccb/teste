@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://grupofdg.com.br/sitemap.xml
